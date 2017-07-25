@@ -21,10 +21,10 @@ public class EventManager {
         session.getTransaction().commit();
     }
     public List listEvents() {
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        session.beginTransaction();
+        Session session = HibernateUtil.getSessionFactory().openSession();
+//        session.beginTransaction();
         List result = session.createQuery("from Event").list();
-        session.getTransaction().commit();
+//        session.getTransaction().commit();
         return result;
     }
 }

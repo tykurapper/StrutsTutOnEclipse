@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.multipart.maxSize" value="250000000"/>
+    <constant name="struts.custom.i18n.resources" value="global" />
+
+    <package name="helloworld" extends="struts-default">
+
+        <action name="hello"
+                class="com.tutorialspoint.struts2.HelloWorldAction"
+                method="execute">
+            <result name="success">/HelloWorld.jsp</result>
+        </action>
+        <action name="eventtest"
+                class="com.tutorialspoint.struts2.HelloWorldAction"
+                method="eventtest">
+            <result name="success">/Success.jsp</result>
+        </action>
+
+        <action name="upload" class="com.tutorialspoint.struts2.uploadFile">
+            <interceptor-ref name="basicStack"/>
+            <interceptor-ref name="fileUploadStack">
+                <param name="fileUpload.maximumSize">10000000</param>
+                <param name="fileUpload.allowedTypes">image/jpeg,image/gif,image/jpg</param>
+            </interceptor-ref>
+            <result name="success">/Success.jsp</result>
+            <result name="error">/Error.jsp</result>
+        </action>
+
+        <action name="loginaction" class="com.tutorialspoint.struts2.LoginAction"
+                method="execute">
+            <result name="success">/Success.jsp</result>
+            <result name="error">/Error.jsp</result>
+        </action>
+        <action name="emailer" class="com.tutorialspoint.struts2.Emailer" method="execute">
+            <result name="success">/success.jsp</result>
+            <result name="error">/Error.jsp</result>
+            <result name="input">/Index.jsp</result>
+        </action>
+        <action name="empinfo" class="com.tutorialspoint.struts2.Employee" method="execute">
+            <result name="input">/Index.jsp</result>
+            <result name="success">/Success.jsp</result>
+        </action>
+        <action name="locale" class="com.tutorialspoint.struts2.Locale" method="execute">
+            <result name="success">/Index.jsp</result>
+        </action>
+        <action name="system" class="com.tutorialspoint.struts2.SystemDetails" method="execute">
+            <result name="success">/System.jsp</result>
+        </action>
+    </package>
+</struts>
