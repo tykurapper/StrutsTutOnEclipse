@@ -5,9 +5,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Upload Successful</title>
+<title>Get Events Successful</title>
 </head>
 <body>
-	You have successfully uploaded <s:property value="myFileFileName"/>.
+<s:iterator value="events">
+	<s:property value="title"/>,
+    <s:property value="date"/><br/>
+</s:iterator>
+<s:property value="events"/>
 </body>
 </html>

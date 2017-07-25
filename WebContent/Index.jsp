@@ -7,28 +7,12 @@
 <title>File Upload</title>
 </head>
 <body>
-<h1><s:text name="global.heading"/></h1>
 
-<s:url var="indexEN" namespace="/" action="locale" >
-    <s:param name="request_locale" >en</s:param>
-    
-</s:url>
-<s:url var="indexES" namespace="/" action="locale" >
-    <s:param name="request_locale" >es</s:param>
-</s:url>
-<s:url var="indexFR" namespace="/" action="locale" >
-    <s:param name="request_locale" >fr</s:param>
-</s:url>
-
-<s:a href="%{indexEN}" >English</s:a>
-<s:a href="%{indexES}" >Spanish</s:a>
-<s:a href="%{indexFR}" >France</s:a>
-
-<s:form action="empinfo" method="post" namespace="/">
-    <s:textfield name="name" key="global.name" size="20" />
-    <s:textfield name="age" key="global.age" size="20" />
-    <s:submit name="submit" key="global.submit" />
+<div>
+<s:form action="eventtest" method="post" namespace="/">
+	<s:submit label="Submit"/>
 </s:form>
+</div>
 
 </body>
 </html>

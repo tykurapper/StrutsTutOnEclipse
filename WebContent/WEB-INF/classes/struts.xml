@@ -15,6 +15,11 @@
                 method="execute">
             <result name="success">/HelloWorld.jsp</result>
         </action>
+        <action name="eventtest"
+                class="com.tutorialspoint.struts2.HelloWorldAction"
+                method="execute">
+            <result name="success">/Success.jsp</result>
+        </action>
 
         <action name="upload" class="com.tutorialspoint.struts2.uploadFile">
             <interceptor-ref name="basicStack"/>
